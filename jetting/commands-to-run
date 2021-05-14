@@ -1,0 +1,6 @@
+cp 0.000000e+00/alpha.water.org 0.000000e+00/alpha.water
+cp 0.000000e+00/U.org 0.000000e+00/U
+setFields
+ rheoInterFoam 
+
+paraFoam -touch
