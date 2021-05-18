@@ -1,0 +1,45 @@
+
+ You must now run the following command to complete the setup:
+
+    source $foamDotFile
+
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+Warning: Permanently added '[node1075.pri.csf3.alces.network]:46461,[10.10.195.75]:46461' (ECDSA) to the list of known hosts.
+Warning: Permanently added '[node1029.pri.csf3.alces.network]:34175,[10.10.195.29]:34175' (ECDSA) to the list of known hosts.
+Warning: Permanently added '[node1012.pri.csf3.alces.network]:46698,[10.10.195.12]:46698' (ECDSA) to the list of known hosts.
+Warning: Permanently added '[node1047.pri.csf3.alces.network]:34157,[10.10.195.47]:34157' (ECDSA) to the list of known hosts.
+Warning: Permanently added '[node1058.pri.csf3.alces.network]:37752,[10.10.195.58]:37752' (ECDSA) to the list of known hosts.
+Warning: Permanently added '[node1124.pri.csf3.alces.network]:33445,[10.10.195.124]:33445' (ECDSA) to the list of known hosts.
+Warning: Permanently added '[node1021.pri.csf3.alces.network]:45649,[10.10.195.21]:45649' (ECDSA) to the list of known hosts.
+[2] #0  Foam::error::printStack(Foam::Ostream&) at ??:?
+[2] #1  Foam::sigFpe::sigHandler(int) at ??:?
+[2] #2  ? in "/lib64/libpthread.so.0"
+[2] #3  Foam::divide(Foam::Field<double>&, double const&, Foam::UList<double> const&) at ??:?
+[2] #4  Foam::tmp<Foam::GeometricField<double, Foam::fvPatchField, Foam::volMesh> > Foam::operator/<Foam::fvPatchField, Foam::volMesh>(Foam::dimensioned<double> const&, Foam::tmp<Foam::GeometricField<double, Foam::fvPatchField, Foam::volMesh> > const&) at ??:?
+[2] #5  ? at ??:?
+[2] #6  __libc_start_main in "/lib64/libc.so.6"
+[2] #7  ? at ??:?
+[node1063:153864:0:153864] Caught signal 8 (Floating point exception: tkill(2) or tgkill(2))
+==== backtrace ====
+    0  /opt/apps/libs/ucx/1.6.0/lib/libucs.so.0(+0x1cedc) [0x2ad6fc01cedc]
+    1  /opt/apps/libs/ucx/1.6.0/lib/libucs.so.0(+0x1d263) [0x2ad6fc01d263]
+    2  /lib64/libpthread.so.0(raise+0x2b) [0x2ad6e51584fb]
+    3  /opt/apps/apps/gcc/openfoam/7_cpp11/OpenFOAM-7/platforms/linux64GccDPInt32Opt/lib/libOpenFOAM.so(_ZN4Foam6divideERNS_5FieldIdEERKdRKNS_5UListIdEE+0x114) [0x2ad6e41d0ae4]
+    4  rheoInterFoam(_ZN4FoamdvINS_12fvPatchFieldENS_7volMeshEEENS_3tmpINS_14GeometricFieldIdT_T0_EEEERKNS_11dimensionedIdEERKS8_+0x169) [0x4c64c9]
+    5  rheoInterFoam() [0x4472fd]
+    6  /lib64/libc.so.6(__libc_start_main+0xf5) [0x2ad6e5387555]
+    7  rheoInterFoam() [0x44fda4]
+===================
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 2 with PID 0 on node node1063 exited on signal 8 (Floating point exception).
+--------------------------------------------------------------------------
